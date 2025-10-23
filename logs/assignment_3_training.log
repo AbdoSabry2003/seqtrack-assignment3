@@ -1,0 +1,197 @@
+
+================================================================================
+ASSIGNMENT 3 - SeqTrack Training Started
+Start Time: 2025-10-23 17:25:44
+Seed: 13
+Selected Classes: ['mouse', 'electricfan']
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 1
+[train] Epoch 1 : 50 / 100 samples , time for last 50 samples : 0:00:21 hours , time since beginning : 0:00:21 hours , time left to finish the epoch : 0:00:21 hours , Loss: 8.3179 , IoU: 0.0780 , samples/sec: 2.30
+[train] Epoch 1 : 100 / 100 samples , time for last 50 samples : 0:00:18 hours , time since beginning : 0:00:39 hours , time left to finish the epoch : 0:00:00 hours , Loss: 8.2588 , IoU: 0.0286 , samples/sec: 2.50
+[val] Epoch 1 : 50 / 50 samples , time for last 50 samples : 0:00:09 hours , time since beginning : 0:00:49 hours , time left to finish the epoch : 0:00:00 hours , Loss: 8.2486 , IoU: 0.1347 , samples/sec: 5.31
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0001.pth.tar
+
+================================================================================
+✅ Epoch 1 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 2
+[train] Epoch 2 : 50 / 100 samples , time for last 50 samples : 0:00:17 hours , time since beginning : 0:01:08 hours , time left to finish the epoch : 0:00:17 hours , Loss: 7.5619 , IoU: 0.0000 , samples/sec: 2.89
+[train] Epoch 2 : 100 / 100 samples , time for last 50 samples : 0:00:21 hours , time since beginning : 0:01:30 hours , time left to finish the epoch : 0:00:00 hours , Loss: 7.4017 , IoU: 0.0455 , samples/sec: 2.55
+[val] Epoch 2 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:01:37 hours , time left to finish the epoch : 0:00:00 hours , Loss: 8.9266 , IoU: 0.1092 , samples/sec: 7.92
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0002.pth.tar
+
+================================================================================
+✅ Epoch 2 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 3
+[train] Epoch 3 : 50 / 100 samples , time for last 50 samples : 0:00:19 hours , time since beginning : 0:02:01 hours , time left to finish the epoch : 0:00:19 hours , Loss: 6.2981 , IoU: 0.1436 , samples/sec: 2.53
+[train] Epoch 3 : 100 / 100 samples , time for last 50 samples : 0:00:17 hours , time since beginning : 0:02:19 hours , time left to finish the epoch : 0:00:00 hours , Loss: 6.6637 , IoU: 0.0000 , samples/sec: 2.67
+[val] Epoch 3 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:02:26 hours , time left to finish the epoch : 0:00:00 hours , Loss: 9.4396 , IoU: 0.0000 , samples/sec: 7.57
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0003.pth.tar
+
+================================================================================
+✅ Epoch 3 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 4
+[train] Epoch 4 : 50 / 100 samples , time for last 50 samples : 0:00:17 hours , time since beginning : 0:02:51 hours , time left to finish the epoch : 0:00:17 hours , Loss: 5.8615 , IoU: 0.1436 , samples/sec: 2.83
+[train] Epoch 4 : 100 / 100 samples , time for last 50 samples : 0:00:19 hours , time since beginning : 0:03:11 hours , time left to finish the epoch : 0:00:00 hours , Loss: 6.1049 , IoU: 0.0000 , samples/sec: 2.66
+[val] Epoch 4 : 50 / 50 samples , time for last 50 samples : 0:00:05 hours , time since beginning : 0:03:17 hours , time left to finish the epoch : 0:00:00 hours , Loss: 9.7590 , IoU: 0.0000 , samples/sec: 8.43
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0004.pth.tar
+
+================================================================================
+✅ Epoch 4 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 5
+[train] Epoch 5 : 50 / 100 samples , time for last 50 samples : 0:00:20 hours , time since beginning : 0:03:40 hours , time left to finish the epoch : 0:00:20 hours , Loss: 5.4663 , IoU: 0.1436 , samples/sec: 2.39
+[train] Epoch 5 : 100 / 100 samples , time for last 50 samples : 0:00:22 hours , time since beginning : 0:04:03 hours , time left to finish the epoch : 0:00:00 hours , Loss: 5.5599 , IoU: 0.0000 , samples/sec: 2.28
+[val] Epoch 5 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:04:09 hours , time left to finish the epoch : 0:00:00 hours , Loss: 9.8563 , IoU: 0.0000 , samples/sec: 7.96
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0005.pth.tar
+
+================================================================================
+✅ Epoch 5 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 6
+[train] Epoch 6 : 50 / 100 samples , time for last 50 samples : 0:00:17 hours , time since beginning : 0:04:33 hours , time left to finish the epoch : 0:00:17 hours , Loss: 5.0139 , IoU: 0.1583 , samples/sec: 2.87
+[train] Epoch 6 : 100 / 100 samples , time for last 50 samples : 0:00:22 hours , time since beginning : 0:04:55 hours , time left to finish the epoch : 0:00:00 hours , Loss: 4.9241 , IoU: 0.0000 , samples/sec: 2.52
+[val] Epoch 6 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:05:02 hours , time left to finish the epoch : 0:00:00 hours , Loss: 9.8503 , IoU: 0.0000 , samples/sec: 8.07
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0006.pth.tar
+
+================================================================================
+✅ Epoch 6 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 7
+[train] Epoch 7 : 50 / 100 samples , time for last 50 samples : 0:00:20 hours , time since beginning : 0:05:25 hours , time left to finish the epoch : 0:00:20 hours , Loss: 4.4814 , IoU: 0.1530 , samples/sec: 2.41
+[train] Epoch 7 : 100 / 100 samples , time for last 50 samples : 0:00:19 hours , time since beginning : 0:05:45 hours , time left to finish the epoch : 0:00:00 hours , Loss: 4.4161 , IoU: 0.0000 , samples/sec: 2.48
+[val] Epoch 7 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:05:51 hours , time left to finish the epoch : 0:00:00 hours , Loss: 12.2236 , IoU: 0.0000 , samples/sec: 7.58
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0007.pth.tar
+
+================================================================================
+✅ Epoch 7 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 8
+[train] Epoch 8 : 50 / 100 samples , time for last 50 samples : 0:00:23 hours , time since beginning : 0:06:18 hours , time left to finish the epoch : 0:00:23 hours , Loss: 3.8400 , IoU: 0.1530 , samples/sec: 2.15
+[train] Epoch 8 : 100 / 100 samples , time for last 50 samples : 0:00:20 hours , time since beginning : 0:06:38 hours , time left to finish the epoch : 0:00:00 hours , Loss: 3.6348 , IoU: 0.4811 , samples/sec: 2.31
+[val] Epoch 8 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:06:44 hours , time left to finish the epoch : 0:00:00 hours , Loss: 13.2610 , IoU: 0.0000 , samples/sec: 8.02
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0008.pth.tar
+
+================================================================================
+✅ Epoch 8 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 9
+[train] Epoch 9 : 50 / 100 samples , time for last 50 samples : 0:00:17 hours , time since beginning : 0:07:04 hours , time left to finish the epoch : 0:00:17 hours , Loss: 3.3430 , IoU: 0.2734 , samples/sec: 2.87
+[train] Epoch 9 : 100 / 100 samples , time for last 50 samples : 0:00:20 hours , time since beginning : 0:07:24 hours , time left to finish the epoch : 0:00:00 hours , Loss: 3.1207 , IoU: 0.0000 , samples/sec: 2.66
+[val] Epoch 9 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:07:30 hours , time left to finish the epoch : 0:00:00 hours , Loss: 12.7858 , IoU: 0.0000 , samples/sec: 8.19
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0009.pth.tar
+
+================================================================================
+✅ Epoch 9 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 10
+[train] Epoch 10 : 50 / 100 samples , time for last 50 samples : 0:00:19 hours , time since beginning : 0:07:53 hours , time left to finish the epoch : 0:00:19 hours , Loss: 3.0617 , IoU: 0.6440 , samples/sec: 2.51
+[train] Epoch 10 : 100 / 100 samples , time for last 50 samples : 0:00:18 hours , time since beginning : 0:08:11 hours , time left to finish the epoch : 0:00:00 hours , Loss: 3.2513 , IoU: 0.0000 , samples/sec: 2.63
+[val] Epoch 10 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:08:17 hours , time left to finish the epoch : 0:00:00 hours , Loss: 13.9523 , IoU: 0.0000 , samples/sec: 7.84
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0010.pth.tar
+
+================================================================================
+✅ Epoch 10 completed
+================================================================================
+
+
+================================================================================
+ASSIGNMENT 3 - SeqTrack Training Started
+Start Time: 2025-10-23 17:35:34
+Seed: 13
+Selected Classes: ['mouse', 'electricfan']
+================================================================================
+
+🔁 Resumed from ./output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0002.pth.tar -> next epoch will be 3
+🌱 Reset seed to 13 at start of epoch 3
+[train] Epoch 3 : 50 / 100 samples , time for last 50 samples : 0:00:22 hours , time since beginning : 0:00:22 hours , time left to finish the epoch : 0:00:22 hours , Loss: 6.2981 , IoU: 0.1436 , samples/sec: 2.24
+[train] Epoch 3 : 100 / 100 samples , time for last 50 samples : 0:00:18 hours , time since beginning : 0:00:40 hours , time left to finish the epoch : 0:00:00 hours , Loss: 6.6637 , IoU: 0.0000 , samples/sec: 2.48
+[val] Epoch 3 : 50 / 50 samples , time for last 50 samples : 0:00:10 hours , time since beginning : 0:00:50 hours , time left to finish the epoch : 0:00:00 hours , Loss: 9.4396 , IoU: 0.0000 , samples/sec: 4.76
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0003.pth.tar
+
+================================================================================
+✅ Epoch 3 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 4
+[train] Epoch 4 : 50 / 100 samples , time for last 50 samples : 0:00:18 hours , time since beginning : 0:01:13 hours , time left to finish the epoch : 0:00:18 hours , Loss: 5.8615 , IoU: 0.1436 , samples/sec: 2.68
+[train] Epoch 4 : 100 / 100 samples , time for last 50 samples : 0:00:21 hours , time since beginning : 0:01:35 hours , time left to finish the epoch : 0:00:00 hours , Loss: 6.1049 , IoU: 0.0000 , samples/sec: 2.49
+[val] Epoch 4 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:01:42 hours , time left to finish the epoch : 0:00:00 hours , Loss: 9.7590 , IoU: 0.0000 , samples/sec: 7.62
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0004.pth.tar
+
+================================================================================
+✅ Epoch 4 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 5
+[train] Epoch 5 : 50 / 100 samples , time for last 50 samples : 0:00:22 hours , time since beginning : 0:02:10 hours , time left to finish the epoch : 0:00:22 hours , Loss: 5.4663 , IoU: 0.1436 , samples/sec: 2.19
+[train] Epoch 5 : 100 / 100 samples , time for last 50 samples : 0:00:20 hours , time since beginning : 0:02:31 hours , time left to finish the epoch : 0:00:00 hours , Loss: 5.5599 , IoU: 0.0000 , samples/sec: 2.32
+[val] Epoch 5 : 50 / 50 samples , time for last 50 samples : 0:00:08 hours , time since beginning : 0:02:39 hours , time left to finish the epoch : 0:00:00 hours , Loss: 9.8563 , IoU: 0.0000 , samples/sec: 5.67
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0005.pth.tar
+
+================================================================================
+✅ Epoch 5 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 6
+[train] Epoch 6 : 50 / 100 samples , time for last 50 samples : 0:00:17 hours , time since beginning : 0:03:00 hours , time left to finish the epoch : 0:00:17 hours , Loss: 5.0139 , IoU: 0.1583 , samples/sec: 2.86
+[train] Epoch 6 : 100 / 100 samples , time for last 50 samples : 0:00:21 hours , time since beginning : 0:03:22 hours , time left to finish the epoch : 0:00:00 hours , Loss: 4.9241 , IoU: 0.0000 , samples/sec: 2.55
+[val] Epoch 6 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:03:28 hours , time left to finish the epoch : 0:00:00 hours , Loss: 9.8503 , IoU: 0.0000 , samples/sec: 7.74
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0006.pth.tar
+
+================================================================================
+✅ Epoch 6 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 7
+[train] Epoch 7 : 50 / 100 samples , time for last 50 samples : 0:00:20 hours , time since beginning : 0:03:52 hours , time left to finish the epoch : 0:00:20 hours , Loss: 4.4814 , IoU: 0.1530 , samples/sec: 2.40
+[train] Epoch 7 : 100 / 100 samples , time for last 50 samples : 0:00:17 hours , time since beginning : 0:04:09 hours , time left to finish the epoch : 0:00:00 hours , Loss: 4.4161 , IoU: 0.0000 , samples/sec: 2.63
+[val] Epoch 7 : 50 / 50 samples , time for last 50 samples : 0:00:06 hours , time since beginning : 0:04:16 hours , time left to finish the epoch : 0:00:00 hours , Loss: 12.2236 , IoU: 0.0000 , samples/sec: 7.22
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0007.pth.tar
+
+================================================================================
+✅ Epoch 7 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 8
+[train] Epoch 8 : 50 / 100 samples , time for last 50 samples : 0:00:17 hours , time since beginning : 0:04:39 hours , time left to finish the epoch : 0:00:17 hours , Loss: 3.8400 , IoU: 0.1530 , samples/sec: 2.84
+[train] Epoch 8 : 100 / 100 samples , time for last 50 samples : 0:00:21 hours , time since beginning : 0:05:01 hours , time left to finish the epoch : 0:00:00 hours , Loss: 3.6348 , IoU: 0.4811 , samples/sec: 2.53
+[val] Epoch 8 : 50 / 50 samples , time for last 50 samples : 0:00:08 hours , time since beginning : 0:05:10 hours , time left to finish the epoch : 0:00:00 hours , Loss: 13.2610 , IoU: 0.0000 , samples/sec: 5.94
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0008.pth.tar
+
+================================================================================
+✅ Epoch 8 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 9
+[train] Epoch 9 : 50 / 100 samples , time for last 50 samples : 0:00:25 hours , time since beginning : 0:05:38 hours , time left to finish the epoch : 0:00:25 hours , Loss: 3.3430 , IoU: 0.2734 , samples/sec: 1.95
+[train] Epoch 9 : 100 / 100 samples , time for last 50 samples : 0:00:19 hours , time since beginning : 0:05:57 hours , time left to finish the epoch : 0:00:00 hours , Loss: 3.1207 , IoU: 0.0000 , samples/sec: 2.23
+[val] Epoch 9 : 50 / 50 samples , time for last 50 samples : 0:00:09 hours , time since beginning : 0:06:06 hours , time left to finish the epoch : 0:00:00 hours , Loss: 12.7858 , IoU: 0.0000 , samples/sec: 5.38
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0009.pth.tar
+
+================================================================================
+✅ Epoch 9 completed
+================================================================================
+
+🌱 Reset seed to 13 at start of epoch 10
+[train] Epoch 10 : 50 / 100 samples , time for last 50 samples : 0:00:21 hours , time since beginning : 0:06:31 hours , time left to finish the epoch : 0:00:21 hours , Loss: 3.0617 , IoU: 0.6440 , samples/sec: 2.32
+[train] Epoch 10 : 100 / 100 samples , time for last 50 samples : 0:00:21 hours , time since beginning : 0:06:52 hours , time left to finish the epoch : 0:00:00 hours , Loss: 3.2513 , IoU: 0.0000 , samples/sec: 2.33
+[val] Epoch 10 : 50 / 50 samples , time for last 50 samples : 0:00:07 hours , time since beginning : 0:06:59 hours , time left to finish the epoch : 0:00:00 hours , Loss: 13.9523 , IoU: 0.0000 , samples/sec: 6.90
+💾 Checkpoint saved: /home/abdo/assignment_3/VideoX/SeqTrack/output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0010.pth.tar
+
+================================================================================
+✅ Epoch 10 completed
+================================================================================
+
