@@ -1,0 +1,67 @@
+DATA:
+  MAX_SAMPLE_INTERVAL: 400
+  MEAN: [0.485, 0.456, 0.406]
+  STD: [0.229, 0.224, 0.225]
+  SEARCH:
+    CENTER_JITTER: 3.5
+    FACTOR: 4.0
+    SCALE_JITTER: 0.5
+    SIZE: 256
+    NUMBER: 1
+  TEMPLATE:
+    CENTER_JITTER: 0
+    FACTOR: 4.0
+    SCALE_JITTER: 0
+    SIZE: 256
+    NUMBER: 2
+  TRAIN:
+    DATASETS_NAME: [LASOT]
+    DATASETS_RATIO: [1]
+#    SAMPLE_PER_EPOCH: 21960  # القيمة الصحيحة
+    SAMPLE_PER_EPOCH: 100       # للتجربه
+    SELECTED_CLASSES: [mouse, electricfan]
+
+MODEL:
+  ENCODER:
+    TYPE: vit_base_patch16
+    PRETRAIN_TYPE: mae
+    USE_CHECKPOINT: false   # لما اخليها true السرعه بتقل جدا
+  DECODER:
+    DEC_LAYERS: 2
+  HIDDEN_DIM: 256
+  BINS: 4000
+  FEATURE_TYPE: x
+
+TRAIN:
+  ENCODER_MULTIPLIER: 0.1
+  BATCH_SIZE: 1   # 4 بتسبب بطئ شديد, 2 سريع, 1 تقريبا نفس سرعة 2 بل ممكن اسرع
+  EPOCH: 10  # مطلوب في التسليم
+  GRAD_CLIP_NORM: 0.1
+  CE_WEIGHT: 1.0
+  LR: 0.0001
+  LR_DROP_EPOCH: 9
+  NUM_WORKER: 0   # الفرق مش كبير فى الوقت بين انه يكون 0 او 2
+  OPTIMIZER: ADAMW
+#  PRINT_INTERVAL: 2000   # للدريب الفعلى
+  PRINT_INTERVAL: 100        # للـ FPS stats
+  PRINT_INTERVAL_SAMPLES: 100  # للـ progress log
+  SCHEDULER:
+    TYPE: step
+    DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0001
+  SEED: 13
+#  HF_REPO: "AbdoSabry2003/seqtrack-assignment3"
+  HF_REPO: null   # للتجربه, يوقف الرفع
+#  RESUME_PATH: null
+  RESUME_PATH: "./output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0002.pth.tar"
+  AMP: false    # لسسب ما لما قفلته التدريب بقا اسرع بكتير
+  VAL_EVERY: 1 # run validation every 1 epoch
+
+TEST:
+  EPOCH: 10
+  SEARCH_FACTOR: 4.0
+  SEARCH_SIZE: 256
+  TEMPLATE_FACTOR: 4.0
+  TEMPLATE_SIZE: 256
+  WINDOW: true
+  NUM_TEMPLATES: 2
