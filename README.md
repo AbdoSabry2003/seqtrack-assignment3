@@ -1,154 +1,111 @@
-# [CVPR'2023] - SeqTrack: Sequence to Sequence Learning for Visual Object Tracking
+# SeqTrack — Assignment 3 (Team 13)
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/seqtrack-sequence-to-sequence-learning-for/visual-object-tracking-on-tnl2k)](https://paperswithcode.com/sota/visual-object-tracking-on-tnl2k?p=seqtrack-sequence-to-sequence-learning-for)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/seqtrack-sequence-to-sequence-learning-for/visual-object-tracking-on-lasot)](https://paperswithcode.com/sota/visual-object-tracking-on-lasot?p=seqtrack-sequence-to-sequence-learning-for)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/seqtrack-sequence-to-sequence-learning-for/visual-object-tracking-on-lasot-ext)](https://paperswithcode.com/sota/visual-object-tracking-on-lasot-ext?p=seqtrack-sequence-to-sequence-learning-for)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/seqtrack-sequence-to-sequence-learning-for/visual-object-tracking-on-trackingnet)](https://paperswithcode.com/sota/visual-object-tracking-on-trackingnet?p=seqtrack-sequence-to-sequence-learning-for)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/seqtrack-sequence-to-sequence-learning-for/visual-object-tracking-on-got-10k)](https://paperswithcode.com/sota/visual-object-tracking-on-got-10k?p=seqtrack-sequence-to-sequence-learning-for)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/seqtrack-sequence-to-sequence-learning-for/visual-object-tracking-on-uav123)](https://paperswithcode.com/sota/visual-object-tracking-on-uav123?p=seqtrack-sequence-to-sequence-learning-for)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/seqtrack-sequence-to-sequence-learning-for/visual-object-tracking-on-needforspeed)](https://paperswithcode.com/sota/visual-object-tracking-on-needforspeed?p=seqtrack-sequence-to-sequence-learning-for)
+This repo contains my Assignment 3 work on SeqTrack (CVPR'23) with a reproducible setup on LaSOT using two classes.
 
-> [**SeqTrack: Sequence to Sequence Learning for Visual Object Tracking**](https://openaccess.thecvf.com/content/CVPR2023/html/Chen_SeqTrack_Sequence_to_Sequence_Learning_for_Visual_Object_Tracking_CVPR_2023_paper.html)<br>
-> accepted by CVPR2023<br>
-> [Xin Chen](https://scholar.google.com.hk/citations?user=A04HWTIAAAAJ&hl=zh-CN&oi=sr), [Houwen Peng](https://houwenpeng.com/), [Dong Wang](http://faculty.dlut.edu.cn/wangdongice/zh_CN/index.htm), [Huchuan Lu](https://ice.dlut.edu.cn/lu/), [Han Hu](https://ancientmooner.github.io/)
-
-
-This is an official pytorch implementation of the CVPR2023 paper SeqTrack: Sequence to Sequence Learning for Visual Object Tracking, a new framework for visual object tracking.
-
-
-
+- Paper: SeqTrack: Sequence to Sequence Learning for Visual Object Tracking
+- Environment: WSL Ubuntu + PyTorch 1.11.0 + CUDA 11.3
 
 ## Highlights
-### Seq2seq modeling
-SeqTrack models tracking as a **sequence generation** task. If the model knows where the target object is, we could simply teach it how to read the bounding box out.
+- Deterministic training (seed=13) re-applied at the start of each epoch
+- Two LaSOT classes: mouse, electricfan (16 train + 4 test per class)
+- Full checkpoints saved per epoch: model + optimizer + LR scheduler + RNG states (+ AMP scaler if enabled)
+- Detailed logging every 50 samples with time stats (console + file)
+- Resume support from any checkpoint (verified: Phase 2 matches Phase 1 for epochs 3–10)
 
-![SeqTrack_pipeline](tracking/pipeline.gif)
+## Reproducibility
+- Seed is reset each epoch (Python/NumPy/Torch/torch.cuda + cuDNN deterministic flags)
+- DataLoader generator and worker_init_fn are seeded
+- Checkpoints include RNG states; resume loads optimizer/scheduler/scaler/RNG and continues seamlessly
 
-### Simple architecture and loss function
-SeqTrack only adopts a **plain encoder-decoder transformer** architecture with a **simple cross-entropy loss**.
-
-![SeqTrack_Framework](tracking/Framework.png)
-
-### Strong performance
-| Tracker      | LaSOT (AUC) | GOT-10K (AO) | TrackingNet (AUC) |
-|--------------|-------------|--------------|-------------------|
-| **SeqTrack** | **72.5**    | **74.8**     | **85.5**          |
-| OSTrack      | 71.1        | 73.7         | 83.9              |
-| SimTrack     | 70.5        | 69.8         | 83.4              |
-| Mixformer    | 70.1        | 70.7         | 83.9              |
-
-## Install the environment
-```
-conda create -n seqtrack python=3.8
-conda activate seqtrack
-bash install.sh
-```
-
-* Add the project path to environment variables
-```
-export PYTHONPATH=<absolute_path_of_SeqTrack>:$PYTHONPATH
-```
-
-## Data Preparation
-Put the tracking datasets in ./data. It should look like:
-   ```
-   ${SeqTrack_ROOT}
-    -- data
-        -- lasot
-            |-- airplane
-            |-- basketball
-            |-- bear
-            ...
-        -- got10k
-            |-- test
-            |-- train
-            |-- val
-        -- coco
-            |-- annotations
-            |-- images
-        -- trackingnet
-            |-- TRAIN_0
-            |-- TRAIN_1
-            ...
-            |-- TRAIN_11
-            |-- TEST
-   ```
-## Set project paths
-Run the following command to set paths for this project
+## Datasets
+LaSOT only. Folder set via:
 ```
 python tracking/create_default_local_file.py --workspace_dir . --data_dir ./data --save_dir .
 ```
-After running this command, you can also modify paths by editing these two files
+
+## Quickstart
 ```
-lib/train/admin/local.py  # paths about training
-lib/test/evaluation/local.py  # paths about testing
+# Phase 1 (from scratch)
+python tracking/train.py --script seqtrack --config seqtrack_b256 --save_dir ./output --mode single
+
+# Phase 2 (resume from epoch 2)
+# Set in YAML: TRAIN.RESUME_PATH: ./output/checkpoints/train/seqtrack/seqtrack_b256/SEQTRACK_ep0002.pth.tar
+python tracking/train.py --script seqtrack --config seqtrack_b256 --save_dir ./output --mode single
 ```
 
-## Train SeqTrack
-```
-python -m torch.distributed.launch --nproc_per_node 8 lib/train/run_training.py --script seqtrack --config seqtrack_b256 --save_dir .
+## Checkpoints (Hugging Face)
+All 10 checkpoints are hosted on the Hub:
+- https://huggingface.co/AbdoSabry2003/seqtrack-assignment3
+- Files: checkpoints/SEQTRACK_ep0001.pth.tar ... SEQTRACK_ep0010.pth.tar
+
+Download example:
+```python
+from huggingface_hub import hf_hub_download
+pth = hf_hub_download(
+    repo_id="AbdoSabry2003/seqtrack-assignment3",
+    filename="checkpoints/SEQTRACK_ep0005.pth.tar"
+)
+print("downloaded:", pth)
 ```
 
-(Optionally) Debugging training with a single GPU
-```
-python tracking/train.py --script seqtrack --config seqtrack_b256 --save_dir . --mode single
+## Scripts
+- scripts/count_dataset.py — counts frames/sequences and computes samples/epoch
+- scripts/compare_phases.py — verifies that Phase 2 matches Phase 1 (epochs 3–10)
+- scripts/plot_training_curves.py — generates Loss/IoU curves
+- scripts/split_log.py — splits combined log into phase1/phase2
+
+## Notes
+- For the attached runs we used SAMPLE_PER_EPOCH=100 for time constraints
+- The correct value for two classes is 21,960 samples/epoch (65,880 frames / 3)
+
+## Links
+- GitHub: https://github.com/AbdoSabry2003/seqtrack-assignment3
+- Hugging Face: https://huggingface.co/AbdoSabry2003/seqtrack-assignment3
 ```
 
+Hugging Face Model Card (README.md) template
+حطه في صفحة الريبو على HF عشان شكلها يبقى بروفيشنال:
 
-## Test and evaluate on benchmarks
+```
+---
+library_name: pytorch
+pipeline_tag: object-tracking
+tags:
+  - seqtrack
+  - lasot
+  - tracking
+  - reproducibility
+datasets:
+  - lasot
+license: mit
+---
 
-- LaSOT
-```
-python tracking/test.py seqtrack seqtrack_b256 --dataset lasot --threads 2
-python tracking/analysis_results.py # need to modify tracker configs and names
-```
-- GOT10K-test
-```
-python tracking/test.py seqtrack seqtrack_b256_got --dataset got10k_test --threads 2
-python lib/test/utils/transform_got10k.py --tracker_name seqtrack --cfg_name seqtrack_b256_got
-```
-- TrackingNet
-```
-python tracking/test.py seqtrack seqtrack_b256 --dataset trackingnet --threads 2
-python lib/test/utils/transform_trackingnet.py --tracker_name seqtrack --cfg_name seqtrack_b256
-```
-- TNL2K
-```
-python tracking/test.py seqtrack seqtrack_b256 --dataset trackingnet --threads 2
-python tracking/analysis_results.py # need to modify tracker configs and names
-```
-- UAV123
-```
-python tracking/test.py seqtrack seqtrack_b256 --dataset uav --threads 2
-python tracking/analysis_results.py # need to modify tracker configs and names
-```
-- NFS
-```
-python tracking/test.py seqtrack seqtrack_b256 --dataset nfs --threads 2
-python tracking/analysis_results.py # need to modify tracker configs and names
-```
-- VOT2020  
-Before evaluating "SeqTrack+AR" on VOT2020, please install some extra packages following [external/AR/README.md](external/AR/README.md)
-```
-cd external/vot20/<workspace_dir>
-export PYTHONPATH=<path to the seqtrack project>:$PYTHONPATH
-vot evaluate --workspace . seqtrack_b256_ar
-vot analysis --nocache
-```
+# SeqTrack — Assignment 3 (Team 13)
 
+This model card hosts 10 training checkpoints from my Assignment 3 on SeqTrack trained on a two-class subset of LaSOT (mouse, electricfan). Training is deterministic with full-state checkpoints that enable perfect resume.
 
-## Test FLOPs, Params, and Speed
-```
-# Profiling SeqTrack-B256 model
-python tracking/profile_model.py --script seqtrack --config seqtrack_b256
+## Contents
+- checkpoints/SEQTRACK_ep0001.pth.tar
+- ...
+- checkpoints/SEQTRACK_ep0010.pth.tar
+
+## Training Setup
+- Classes: mouse, electricfan (16 train + 4 test per class)
+- Seed: 13 (reset at the start of every epoch)
+- Checkpoints contain:
+  - model state_dict
+  - optimizer state_dict
+  - LR scheduler state_dict
+  - RNG states (Python/NumPy/Torch/torch.cuda)
+  - (optional) AMP scaler
+
+## How to use
+```python
+from huggingface_hub import hf_hub_download
+ckpt = hf_hub_download("AbdoSabry2003/seqtrack-assignment3", "checkpoints/SEQTRACK_ep0008.pth.tar")
 ```
 
-## Model Zoo
-The trained models, and the raw tracking results are provided in the [model zoo](MODEL_ZOO.md)
-
-## Acknowledgement
-* This codebase is implemented on [STARK](https://github.com/researchmm/Stark) and [PyTracking](https://github.com/visionml/pytracking) libraries, also refers to [Stable-Pix2Seq](https://github.com/gaopengcuhk/Stable-Pix2Seq), and borrows [AlphaRefine](https://github.com/MasterBin-IIAU/AlphaRefine) for VOT evaluation. 
-We would like to thank their authors for providing great libraries.
-
-
-
+## Notes
+- For time constraints, training runs used SAMPLE_PER_EPOCH=100 (the correct count is 21,960 for these two classes).
+- Verified reproducibility: resuming from epoch 2 yields identical Loss/IoU from epoch 3–10 compared to a straight-through run.
+- Repository: https://github.com/AbdoSabry2003/seqtrack-assignment3
