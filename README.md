@@ -61,12 +61,7 @@ print("downloaded:", pth)
 ## Links
 - GitHub: https://github.com/AbdoSabry2003/seqtrack-assignment3
 - Hugging Face: https://huggingface.co/AbdoSabry2003/seqtrack-assignment3
-```
 
-Hugging Face Model Card (README.md) template
-حطه في صفحة الريبو على HF عشان شكلها يبقى بروفيشنال:
-
-```
 ---
 library_name: pytorch
 pipeline_tag: object-tracking
